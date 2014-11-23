@@ -1,0 +1,15 @@
+machine:
+  timezone:
+    Africa/Johannesburg
+  php:
+    version: 5.4.21
+  hosts:
+    app.test: 127.0.0.1
+
+test:
+  override:
+    - vendor/bin/phpunit
+
+dependencies:
+  override:
+    - composer install --prefer-source --no-interaction --no-dev
