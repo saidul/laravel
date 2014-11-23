@@ -5,7 +5,9 @@ machine:
     version: 5.4.21
   hosts:
     app.test: 127.0.0.1
-
+test:
+  override:
+    - phpunit --coverage-html $CIRCLE_ARTIFACTS/report
 dependencies:
   override:
     - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
